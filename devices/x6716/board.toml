@@ -1,0 +1,42 @@
+name = "x6716"
+description = "Infinix Note 30i"
+soc = "mt6768"
+
+features = []
+
+[loader]
+kernel_load = 0x40080000
+chain_stub = 0x4a000000
+xnu_base = 0xc0000000
+xnu_size = 0x3ef00000
+marker = 0x80000000
+panic_log = 0x80100000
+panic_log_size = 0x80000
+scratch = 0x50000000
+test_buffer = 0xa0000000
+core_order = [0, 7, 6, 1, 2, 3, 4, 5]
+system_partition = "xnusys"
+
+[ramoops]
+console = 0x4d09f000
+console_size = 0x40000
+pmsg = 0x4d0e0000
+pmsg_size = 0x10000
+
+[display]
+fb_base = 0x77520000
+fb_size = 0x1050000
+fb_pitch = 4352
+width = 1080
+height = 2400
+
+[fbdiag]
+marker = 0x4d0df000
+probes = [0x42000000, 0x80000000]
+dump = []
+
+[boot]
+android_device = "Infinix-X6716"
+cpus = 1
+seconds = 60
+bootargs = []
